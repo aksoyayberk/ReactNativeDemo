@@ -1,10 +1,21 @@
 import React from 'react'
-import { View, Text, StyleSheet} from 'react-native'
+import { View, Text, StyleSheet, Button} from 'react-native'
+
+import RollMessagingServiceModule from './RollMessagingServiceModule'
 
 const Header = props => {
+    RollMessagingServiceModule.getCurrentFCMToken((token) => console.log(token))
+    let configs = {
+        "importance": RollMessagingServiceModule.IMPORTANCE_HIGH,
+        "priority": RollMessagingServiceModule.PRIORITY_HIGH
+    }
     return (
         <View style={styles.header}>
             <Text style={styles.headerTitle}>{props.title}</Text>
+            <Button
+          title="Press me"
+          onPress={() => RollMessagingServiceModule.sendNotification("Title", "Text", configs)}
+        />
         </View>
     )
 }

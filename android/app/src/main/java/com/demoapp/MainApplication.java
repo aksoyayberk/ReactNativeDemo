@@ -12,6 +12,7 @@ import java.util.List;
 import io.invertase.firebase.analytics.RNFirebaseAnalyticsPackage;
 import io.invertase.firebase.messaging.RNFirebaseMessagingPackage;
 import io.invertase.firebase.notifications.RNFirebaseNotificationsPackage;
+import com.demoapp.rollmessagingservice.RollMessagingServicePackage;
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -31,6 +32,7 @@ public class MainApplication extends Application implements ReactApplication {
           packages.add(new RNFirebaseAnalyticsPackage());
           packages.add(new RNFirebaseMessagingPackage());
           packages.add(new RNFirebaseNotificationsPackage());
+          packages.add(new RollMessagingServicePackage());
           return packages;
         }
 

@@ -8,20 +8,20 @@ const App = () => {
   const analytics = firebase.analytics();
   analytics.setAnalyticsCollectionEnabled(true);
   analytics.logEvent('Init', {isAlive: true});
-  firebase
-    .messaging()
-    .getToken()
-    .then(fcmToken => {
-      if (fcmToken) {
-        console.log('FCM Token: ', fcmToken);
-      } else {
-        console.log("Couldn't get the FCM token");
-      }
-    });
+  // firebase
+  //   .messaging()
+  //   .getToken()
+  //   .then(fcmToken => {
+  //     if (fcmToken) {
+  //       console.log('FCM Token: ', fcmToken);
+  //     } else {
+  //       console.log("Couldn't get the FCM token");
+  //     }
+  //   });
   return (
     <View style={styles.screen}>
       <Header title="Firebase Notification Demo" />
-      <NotificationHandler/>
+      {/* <NotificationHandler/> */}
     </View>
   );
 };
